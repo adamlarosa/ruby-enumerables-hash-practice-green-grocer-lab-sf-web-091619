@@ -1,8 +1,4 @@
-require 'pry'
-
 def consolidate_cart(cart)
-  # code here
-  
   final_hash = {}
   cart.each do |item|
     name = item.keys[0]
@@ -22,8 +18,6 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
-  # code here
-  
   coupons.each do |coupon|
     item = coupon[:item]
     if cart[item]
@@ -55,7 +49,6 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-
   final_cart = consolidate_cart(cart)
   discounts = apply_coupons(final_cart, coupons)
   clearance = apply_clearance(discounts)
